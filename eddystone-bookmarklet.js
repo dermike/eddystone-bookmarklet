@@ -1,5 +1,9 @@
 (function() {
   
+  var eb = document.createElement('div');
+  eb.setAttribute('style', 'z-index:1999;position:fixed;top:0;left:0;right:0;width:100%;background-color:#000;color:#fff;font-size:12px;padding:1em;text-align:center;');
+  document.body.appendChild(eb);
+  
   function getShortUrl() {
     var request = new XMLHttpRequest();
     request.open('POST', 'https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyDdsRcdenBZR8nWqo_Ak58w8vCoASSty1k', true);
@@ -8,7 +12,7 @@
     request.onreadystatechange = function() {
       if (request.readyState == 4 && request.status == 200) {
         var response = JSON.parse(request.responseText);
-        console.log('Shortened ' + response.longUrl + ' to ' + response.id);
+        eb.innerHTML += '<p>Shortened ' + response.longUrl + ' to ' + response.id + '</p>';
         ws.send(response.id);
       }
     }
@@ -23,18 +27,18 @@
     
   ws = new WebSocket('ws://localhost:1234/');
   ws.onopen = function(event) {
-    console.log('Connected to beacon-server');
+    eb.innerHTML += '<p>Connected to beacon-server</p>';
     getShortUrl();
   };
   ws.onmessage = function(event) {
-    console.log(event.data);
+    eb.innerHTML += '<p>' + event.data + '</p>';
   }
   ws.onclose = function(event) {
     ws = null;
-    console.log('Connection closed');
+    eb.innerHTML += '<p>Connection closed</p>';
   };
   ws.onerror = function(event) {
-    console.log('Received error');
+    eb.innerHTML += '<p>Received error</p>';
   };
 
 })();
