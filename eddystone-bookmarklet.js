@@ -1,7 +1,7 @@
 (function() {
   
   var eb = document.createElement('div');
-  eb.setAttribute('style', 'z-index:1999;position:fixed;top:0;left:0;right:0;width:100%;background-color:#000;color:#fff;font-size:12px;padding:1em;text-align:center;');
+  eb.setAttribute('style', 'z-index:1999;position:fixed;bottom:0;left:0;right:0;width:100%;background-color:#000;color:#fff;font-size:12px;padding:1em;text-align:center;');
   document.body.appendChild(eb);
   
   function getShortUrl() {
