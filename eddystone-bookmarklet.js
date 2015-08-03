@@ -1,8 +1,12 @@
 (function() {
   
-  var eb = document.createElement('div');
-  eb.setAttribute('style', 'z-index:1999;position:fixed;bottom:0;left:0;right:0;width:100%;background-color:#000;color:#fff;font-size:12px;padding:1em;text-align:center;');
-  document.body.appendChild(eb);
+  var eb = document.getElementById('eddystone-bm') || document.createElement('div');
+  if (!eb.id) {
+    eb.id = 'eddystone-bm';
+    eb.setAttribute('style', 'z-index:1999;position:fixed;bottom:0;left:0;right:0;width:100%;background-color:#000;color:#fff;font-size:12px;padding:1em;text-align:center;');
+    eb.setAttribute('onclick', 'this.parentNode.removeChild(this)');
+    document.body.appendChild(eb);
+  }
   
   function getShortUrl() {
     var request = new XMLHttpRequest();
