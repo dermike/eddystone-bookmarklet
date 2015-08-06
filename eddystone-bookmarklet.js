@@ -31,7 +31,7 @@
     
   ws = new WebSocket('ws://localhost:1234/');
   ws.onopen = function(event) {
-    eb.innerHTML += '<p>Connected to beacon-server</p>';
+    eb.innerHTML += '<p>Connected</p>';
     getShortUrl();
   };
   ws.onmessage = function(event) {
@@ -39,10 +39,10 @@
   }
   ws.onclose = function(event) {
     ws = null;
-    eb.innerHTML += '<p>Connection closed</p>';
+    eb.innerHTML += '<p>Disconnected</p>';
   };
   ws.onerror = function(event) {
-    eb.innerHTML += '<p>Received error</p>';
+    eb.innerHTML += '<p>Error</p>';
   };
 
 })();
