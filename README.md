@@ -2,7 +2,7 @@
 Share links in the office with this [Physical Web](http://github.com/google/physical-web) [Eddystone](http://github.com/google/eddystone) URL beacon bookmarklet.
 
 ### Use
-To be able to use this bookmarklet and broadcast the URL from your computer you need to use the node.js server part from the [slide-beacon project](https://github.com/dermike/slide-beacon).
+To be able to use this bookmarklet and broadcast the URL from your computer you need to use the node.js server part from the [slide-beacon project](https://github.com/dermike/slide-beacon), or this desktop app for Mac OSX [electron-slide-beacon](https://github.com/dermike/electron-slide-beacon).
 
 Add this link too a bookmark:
 
