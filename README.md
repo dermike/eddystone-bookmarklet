@@ -1,7 +1,7 @@
 # eddystone-bookmarklet
 Share links in the office with this [Physical Web](http://github.com/google/physical-web) [Eddystone](http://github.com/google/eddystone) URL beacon bookmarklet.
 
-***Note:*** A recent change to discover Physical Web URL:s via Google Chrome and Android Nearby requires them to be using https. This bookmarklet will fail on https URL:s unless [slide-beacon](https://github.com/dermike/slide-beacon) is [modified to use secure websockets](https://github.com/websockets/ws/blob/master/examples/ssl.js). Since this modification requires certificate files and [slide-beacon](https://github.com/dermike/slide-beacon) was originally meant to broadcast presentational slide URL:s I will not update it myself.
+***Note:*** A recent change to discover Physical Web URL:s via Google Chrome and Android Nearby requires them to be using https. This bookmarklet will fail on https URL:s unless [slide-beacon](https://github.com/dermike/slide-beacon) is [modified to use secure websockets](https://github.com/websockets/ws/blob/master/examples/ssl.js). Since this modification requires certificate files and because [slide-beacon](https://github.com/dermike/slide-beacon) was originally meant to broadcast presentational slide URL:s I will not update it myself.
 
 ### Use
 To be able to use this bookmarklet and broadcast the URL from your computer you need to use the node.js server part from the [slide-beacon project](https://github.com/dermike/slide-beacon), or this desktop app for Mac OSX [electron-slide-beacon](https://github.com/dermike/electron-slide-beacon).
